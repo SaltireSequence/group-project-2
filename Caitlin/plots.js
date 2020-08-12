@@ -13,10 +13,6 @@
     type: 'scatter',
     name: 'Appetizers',
     text: ['A-1', 'A-2', 'A-3', 'A-4', 'A-5'], //recipeTitles
-    textposition: 'top center',
-    textfont: {
-      family:  'Raleway, sans-serif'
-    },
     marker: { size: 12 }
   };
   
@@ -35,10 +31,6 @@
     type: 'scatter',
     name: 'Breakfast',
     text: ['B-a', 'B-b', 'B-c', 'B-d', 'B-e'], //recipeTitles
-    textfont : {
-      family:'Times New Roman'
-    },
-    textposition: 'bottom center',
     marker: { size: 12 }
   };
 
@@ -57,10 +49,6 @@
     type: 'scatter',
     name: 'Brunch',
     text: ['B-a', 'B-b', 'B-c', 'B-d', 'B-e'], //recipeTitles
-    textfont : {
-      family:'Times New Roman'
-    },
-    textposition: 'bottom center',
     marker: { size: 12 }
   };
 
@@ -79,10 +67,6 @@
     type: 'scatter',
     name: 'Desserts',
     text: ['B-a', 'B-b', 'B-c', 'B-d', 'B-e'], //recipeTitles
-    textfont : {
-      family:'Times New Roman'
-    },
-    textposition: 'bottom center',
     marker: { size: 12 }
   };
 
@@ -101,10 +85,6 @@
     type: 'scatter',
     name: 'Dinners',
     text: ['B-a', 'B-b', 'B-c', 'B-d', 'B-e'], //recipeTitles
-    textfont : {
-      family:'Times New Roman'
-    },
-    textposition: 'bottom center',
     marker: { size: 12 }
   };
 
@@ -123,10 +103,6 @@
     type: 'scatter',
     name: 'Drinks',
     text: ['B-a', 'B-b', 'B-c', 'B-d', 'B-e'], //recipeTitles
-    textfont : {
-      family:'Times New Roman'
-    },
-    textposition: 'bottom center',
     marker: { size: 12 }
   };
 
@@ -145,10 +121,6 @@
     type: 'scatter',
     name: 'Lunch',
     text: ['B-a', 'B-b', 'B-c', 'B-d', 'B-e'], //recipeTitles
-    textfont : {
-      family:'Times New Roman'
-    },
-    textposition: 'bottom center',
     marker: { size: 12 }
   };
 
@@ -167,10 +139,6 @@
     type: 'scatter',
     name: 'Salads',
     text: ['B-a', 'B-b', 'B-c', 'B-d', 'B-e'], //recipeTitles
-    textfont : {
-      family:'Times New Roman'
-    },
-    textposition: 'bottom center',
     marker: { size: 12 }
   };
 
@@ -189,10 +157,6 @@
     type: 'scatter',
     name: 'Sandwiches',
     text: ['B-a', 'B-b', 'B-c', 'B-d', 'B-e'], //recipeTitles
-    textfont : {
-      family:'Times New Roman'
-    },
-    textposition: 'bottom center',
     marker: { size: 12 }
   };
 
@@ -211,10 +175,6 @@
     type: 'scatter',
     name: 'Side Dishes',
     text: ['B-a', 'B-b', 'B-c', 'B-d', 'B-e'], //recipeTitles
-    textfont : {
-      family:'Times New Roman'
-    },
-    textposition: 'bottom center',
     marker: { size: 12 }
   };
 
@@ -233,10 +193,6 @@
     type: 'scatter',
     name: 'Snacks',
     text: ['B-a', 'B-b', 'B-c', 'B-d', 'B-e'], //recipeTitles
-    textfont : {
-      family:'Times New Roman'
-    },
-    textposition: 'bottom center',
     marker: { size: 12 }
   };
 
@@ -255,10 +211,6 @@
     type: 'scatter',
     name: 'Soups',
     text: ['B-a', 'B-b', 'B-c', 'B-d', 'B-e'], //recipeTitles
-    textfont : {
-      family:'Times New Roman'
-    },
-    textposition: 'bottom center',
     marker: { size: 12 }
   };
 
@@ -277,10 +229,6 @@
     type: 'scatter',
     name: 'Soups and Stews',
     text: ['B-a', 'B-b', 'B-c', 'B-d', 'B-e'], //recipeTitles
-    textfont : {
-      family:'Times New Roman'
-    },
-    textposition: 'bottom center',
     marker: { size: 12 }
   };
 
@@ -299,10 +247,7 @@
     type: 'scatter',
     name: 'Stews',
     text: ['B-a', 'B-b', 'B-c', 'B-d', 'B-e'], //recipeTitles
-    textfont : {
-      family:'Times New Roman'
-    },
-    textposition: 'bottom center',
+    
     marker: { size: 12 }
   };
 
@@ -322,37 +267,13 @@ function init() {
       font: {
         family: 'Arial, sans-serif',
         size: 20,
-        color: 'grey',
+        color: 'black',
       }
     },
-    title:'Data Labels on the Plot'
+    title:'Recipe Times vs. Ingredients and Effort'
   };
   
   Plotly.newPlot('scatterPlot', data, layout);
-}
-
-d3.selectAll("#selDataset").on("change", updatePlotly);
-
-function updatePlotly() {
-
-  var dropdownMenu = d3.select("#selDataset");
-  var dataset = dropdownMenu.property("value");
-
-  var x = [];
-  var y = [];
-
-  if (dataset === 'dataset1') {
-    x = [1, 2, 3, 4, 5];
-    y = [1, 2, 4, 8, 16];
-  }
-
-  if (dataset === 'dataset2') {
-    x = [10, 20, 30, 40, 50];
-    y = [1, 10, 100, 1000, 10000];
-  }
-
-  Plotly.restyle("plot", "x", [x]);
-  Plotly.restyle("plot", "y", [y]);
 }
 
 init();
