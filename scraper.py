@@ -40,7 +40,11 @@ for i in range(164,1068): #These are the only strings we need
 recipe_list=[]
 
 #systematically visit the links corresponding every item in our list
-for link in linklist_text[1 :]:
+#IMPORTANT: change first line to read 
+# "for link in linklist_text[start_index, stop_index]" to start scraping somewhere
+#in the middle of the link list.
+
+for link in linklist_text: # <- this is the line you could change
     time.sleep(0.3)
     target=driver.find_element_by_partial_link_text(link)
     target.click()
