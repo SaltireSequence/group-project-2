@@ -106,7 +106,7 @@ for link in linklist_text: # <- this is the line you could change
     with open ("recipe_list2.txt", "a") as fout:
         for recipe_text in recipe_list:
             fout.write("%s\n" % recipe_text.encode("utf-8"))
-            recipe_list=[]
+    recipe_list=[]
             
 #return to the original page to prepare for the next cycle
     driver.get(url)
