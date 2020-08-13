@@ -55,7 +55,7 @@ recipe_list=[]
 #"for link in linklist_text[822 :]: " (other person 2)
 #and I will complete the remainder
 
-for link in linklist_text: # <- this is the line you could change
+for link in linklist_text[822 :]: # <- this is the line you could change
     time.sleep(0.3)
     target=driver.find_element_by_partial_link_text(link)
     target.click()
@@ -103,7 +103,7 @@ for link in linklist_text: # <- this is the line you could change
                 continue
 #Append the temporary recipe list to an external file, then clear the temp list
 #for the next loop
-    with open ("recipe_list2.txt", "a") as fout:
+    with open ("heesung_recipe_list.txt", "a") as fout:
         for recipe_text in recipe_list:
             fout.write("%s\n" % recipe_text.encode("utf-8"))
     recipe_list=[]
