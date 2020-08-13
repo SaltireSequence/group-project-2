@@ -55,7 +55,7 @@ recipe_list=[]
 #"for link in linklist_text[822 :]: " (other person 2)
 #and I will complete the remainder
 
-for link in linklist_text[822 :]: # <- this is the line you could change
+for link in linklist_text[924 :]: # <- this is the line you could change
     time.sleep(0.3)
     target=driver.find_element_by_partial_link_text(link)
     target.click()
