@@ -44,6 +44,17 @@ recipe_list=[]
 # "for link in linklist_text[start_index, stop_index]" to start scraping somewhere
 #in the middle of the link list.
 
+#To split the work among two people evenly (me and you), change this line to say:
+# "for link in linklist_text[616 :]: "
+# and I will complete the remainder
+
+#To split the work among three people evenly (me and two others) 
+# change this line to say:
+# "for link in linklist_text[411 822]: " (other person 1)
+# and:
+#"for link in linklist_text[822 :]: " (other person 2)
+#and I will complete the remainder
+
 for link in linklist_text: # <- this is the line you could change
     time.sleep(0.3)
     target=driver.find_element_by_partial_link_text(link)
