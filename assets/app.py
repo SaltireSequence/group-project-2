@@ -8,10 +8,13 @@ app=Flask(__name__)
 mongo = PyMongo(app, uri="mongodb://localhost:27017/simply_recipe.recipes_collection")
 
 # Route to render index.html template using data from Mongo
-@app.route("/")
+@app.route("/index.html")
 def index():
     return render_template("index.html")
 
 
 @app.route("/api")
-def api()
+def api():
+
+    destination_data = mongo.db.collection.find_one()
+    return render_template("index.html", )
