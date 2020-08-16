@@ -1,14 +1,20 @@
-from flask import Flask, render_template, redirect
-from flask_pymongo import PyMongo
-import db
+import flask
+from flask import Flask, jsonify, Response
+import pymongo
+from pymongo import MongoClient
+import json
+from bson import json_util
 
-# Instanciate
-app=Flask(__name__)
+cluster = pymongo.MongoClient("mongodb+srv://group2:group2@cluster0.mpjcg.mongodb.net/<dbname>?retryWrites=true&w=majority")
+db = cluster["simply_recipe"]
+col = db["recipes_collection"]
+app = Flask(__name__)
 
-# PyMongo to initialize connection
-mongo = PyMongo(app, uri="mongodb://localhost:27017/simply_recipe.recipes_collection")
+# This route returns all the recipe_collection data in JSON.
+@app.route("/recipes", methods=["GET"])
+def get_recipes():
+    all_recipes = list(col.find({}))
+    return json.dumps(all_recipes, default=json_util.default)
 
-# Route to render index.html template using data from Mongo
-@app.route("/index.html")
-def index():
-    return render_template("index.html")
+if __name__ == "__main__":
+    app.run()
