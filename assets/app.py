@@ -1,7 +1,8 @@
 from flask import Flask, render_template, redirect
 from flask_pymongo import PyMongo
+import db
 
-# Creating instance of Flask
+# Instanciate
 app=Flask(__name__)
 
 # PyMongo to initialize connection
@@ -11,10 +12,3 @@ mongo = PyMongo(app, uri="mongodb://localhost:27017/simply_recipe.recipes_collec
 @app.route("/index.html")
 def index():
     return render_template("index.html")
-
-
-@app.route("/api")
-def api():
-
-    destination_data = mongo.db.collection.find_one()
-    return render_template("index.html", )
