@@ -1,0 +1,99 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 32,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "#dependencies\n",
+    "from bs4 import BeautifulSoup\n",
+    "import requests\n",
+    "from splinter import Browser\n",
+    "from selenium import webdriver\n",
+    "from selenium.webdriver.common.keys import Keys\n",
+    "import selenium\n",
+    "import time\n",
+    "import csv"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 33,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "#set up chromedriver\n",
+    "driver=webdriver.Chrome('chromedriver.exe')\n",
+    "url = \"https://www.simplyrecipes.com/index/\"\n",
+    "driver.get(url) \n",
+    "response=requests.get(url)\n",
+    "soup=BeautifulSoup(response.text,'html.parser')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 34,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "linklist=[]\n",
+    "links=soup.find_all('a')\n",
+    "for link in links:\n",
+    "    linklist.append(link)\n",
+    "linklist_text=[]\n",
+    "for i in range(164,1068):\n",
+    "    linklist_text.append(linklist[i].text)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "recipe_list=[]\n",
+    "for link in linklist_text:\n",
+    "    time.sleep(0.3)\n",
+    "    target=driver.find_element_by_partial_link_text(link)\n",
+    "    target.click()\n",
+    "    time.sleep(0.1)\n",
+    "    cards = driver.find_elements_by_class_name(\"grd-title-link\")\n",
+    "    for i in range(0,len(cards)):\n",
+    "        try:\n",
+    "            newcards = driver.find_elements_by_class_name(\"grd-title-link\")\n",
+    "            time.sleep(0.3)\n",
+    "            newcards[i].click()\n",
+    "            time.sleep(0.3)\n",
+    "            recipe=driver.find_element_by_id(\"sr-recipe-callout\")\n",
+    "            recipe_list.append(recipe.text)\n",
+    "            driver.back()\n",
+    "            time.sleep(0.3)\n",
+    "        except:\n",
+    "            continue\n",
+    "    driver.get(url)"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3.6.10 64-bit ('PythonDataViz': conda)",
+   "language": "python",
+   "name": "python361064bitpythondatavizcondaed56fc30986a464784f8a472c80ebaf6"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.6.10"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 4
+}

@@ -55,6 +55,7 @@ Once it’s made, this keeps best covered, in the refrigerator, for 3 to 4 days.
 Hello! All photos and content are copyright protected. Please do not use our photos without prior written permission. Thank you!
 Print
 Print
+<<<<<<< HEAD
 One-Pan Paprika Chicken with Potatoes and Tomatoes Recipe
 Prep time: 15 minutesCook time: 1 hourYield: Serves 4 to 6
 Small red or yellow potatoes can be substituted for the baby potatoes; cut them into bite-sized pieces before baking.
@@ -255,6 +256,8 @@ Add freshly ground pepper and more salt to taste. (Potatoes soak up salt, so you
 Hello! All photos and content are copyright protected. Please do not use our photos without prior written permission. Thank you!
 Print
 Print
+=======
+>>>>>>> 9edd77a2c8a44f31920a91b489b682e420f20d96
 Shrimp Fried Rice Recipe
 Prep time: 15 minutesCook time: 15 minutesYield: Serves 4
 Make sure to use leftover, day old rice when making fried rice. Freshly made rice will make a fried rice that's mushy.
@@ -288,6 +291,7 @@ Add the carrots, peas, shrimp, eggs, and sesame oil, stirring to combine well.
 Heat everything until sizzling hot. Add more soy sauce to taste.
 Hello! All photos and content are copyright protected. Please do not use our photos without prior written permission. Thank you!
 Print
+<<<<<<< HEAD
 Print
 Quick and Easy Pan-Fried Flank Steak Recipe
 Prep time: 10 minutesCook time: 15 minutesSteak resting time: 10 minutesYield: Serves 4 to 6
@@ -1043,3 +1047,5 @@ Add the tomatoes and cook, stirring, for 2 minutes or until they stop sizzling. 
 6 Serve: Garnish the dish with dabs of pesto and fresh basil leaves. Serve straight from the pan to individual dishes.
 Hello! All photos and content are copyright protected. Please do not use our photos without prior written permission. Thank you!
 Print
+=======
+>>>>>>> 9edd77a2c8a44f31920a91b489b682e420f20d96
