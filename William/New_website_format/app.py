@@ -5,7 +5,6 @@ import pymongo
 from pymongo import MongoClient
 from bson import ObjectId, json_util
 import json
-# from .utils import JSON_MIME_TYPE, search_book
 
 cluster = pymongo.MongoClient("mongodb+srv://group2:group2@cluster0.mpjcg.mongodb.net/<dbname>?retryWrites=true&w=majority")
 db = cluster["simply_recipe"]
@@ -35,4 +34,4 @@ def get_recipes():
     return json.dumps(all_recipes, default=json_util.default)
 
 if __name__ == "__main__":
-    app.run(debug=True, port=5000, host="0.0.0.0")
+    app.run()
